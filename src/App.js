@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import LeftPanel from './components/leftPanel/LeftPanel';
+import LoginEmployee from './pages/loginEmployee/LoginEmployee';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import './generalStyles.scss';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            {/* <LoginEmployee/>
+<LeftPanel/> */}
+            <Router>
+                <Routes>
+                    {/* <Route path="/" element={<LoginEmployee/>}/> */}
+                    <Route path="/" element={<LeftPanel/>}/>
+                </Routes>
+            </Router>
+        </>
+    );
 }
 
 export default App;

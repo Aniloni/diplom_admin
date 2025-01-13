@@ -1,0 +1,32 @@
+.analytics_info {
+    border: 1px solid var(--brownOpacity60);
+    border-radius: 28px;
+    padding-left: 25px;
+    padding-top: 15px;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    color: var(--blackContent);
+    width: 337px;
+    height: 141px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.service-count { background-color: var(--beigeOpacity80); }
+.service-percentage { background-color: var(--redOpacity80); }
+.service-time { background-color: var(--brownOpacity80); }

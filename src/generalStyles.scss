@@ -1,0 +1,115 @@
+:root {
+  --white: rgba(255, 255, 255, 1);
+  --beigeOpacity80: rgba(195, 147, 103, 0.8);
+  --beigeOpacity40: rgba(195, 147, 103, 0.4);
+  --beigeOpacity20: rgba(195, 147, 103, 0.2);
+  --beigeOpacity10: rgba(195, 147, 103, 0.1);
+  --brownColor: rgba(98, 59, 42, 1);
+  --brownOpacity10: rgba(98, 59, 42, 0.1);
+  --brownOpacity60: rgba(98, 59, 42, 0.6);
+  --brownOpacity80: rgba(98, 59, 42, 0.8);
+  --brownOpacity90: rgba(98, 59, 42, 0.9);
+  --blackContent: rgba(44, 42, 41, 1);
+  --yellowOpacity30: rgba(254, 234, 18, 0.3);
+  --lightGreenOpacity30: rgba(152, 190, 13, 0.3);
+  --redOpacity30: rgba(231, 52, 46, 0.3);
+  --redOpacity80: rgba(224, 78, 57, 0.6);
+  --marginBtn: 35px 0 0px 0;
+  --greyOpacity80: (#2C2A29CC);
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url('./fonts/PT Sans/PTSans-Regular.eot');
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+  url('./fonts/PT Sans/PTSans-Regular.woff2') format('woff2'),
+  url('./fonts/PT Sans/PTSans-Regular.woff') format('woff'),
+  url('./fonts/PT Sans/PTSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url('./fonts/PT Sans/PTSans-Bold.eot');
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+  url('./fonts/PT Sans/PTSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/PT Sans/PTSans-Bold.woff2') format('woff2'),
+  url('./fonts/PT Sans/PTSans-Bold.woff') format('woff'),
+  url('./fonts/PT Sans/PTSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+input {
+  background: none;
+}
+
+input:focus {
+  outline: none;
+
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  color: var(--blackContent);
+  font-style: normal;
+  box-sizing: content-box;
+  background: var(--beigeOpacity40);
+
+}
+
+.container {
+  height: 80vh;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+
+  outline: 10px solid var(--white);
+  border-radius: 28px;
+}

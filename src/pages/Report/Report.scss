@@ -1,0 +1,43 @@
+.report{
+    background-color: var(--white);
+    padding: 120px 29px 0 29px;
+    width: 1020px;
+    font-family: "PT Sans";
+}
+.header-report{
+    display: flex;
+    align-items: center;
+}
+
+.report-p{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 37.5px;
+    text-align: left;
+    margin-right: 188.14px;
+}
+.date-picker{
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 30px;
+    justify-content: center;
+}
+.excel{
+    padding-left: 41px;
+    width: 245px;
+    height: 41px;
+font-size: 16px;
+font-weight: 400;
+line-height: 20.7px;
+text-align: left;
+margin-top: 22.41px;
+}
+
+.excel:hover{
+    text-decoration: underline;
+
+}
+.table-report{
+    padding-top: 15px;
+}

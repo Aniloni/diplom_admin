@@ -1,0 +1,47 @@
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    width: 403px;
+    height: 376px;
+    border-radius: 20px;
+    border-bottom: 2px solid var(--brownOpacity60);
+  }
+  
+  .bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bar {
+    margin-top: 25px;
+    width: 44px;
+    height: 223px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    background-color:var(--white);
+    border: 2px solid rgb(255, 255, 255); 
+    box-shadow: 0 0 0 1px var(--blackContent); 
+    display: flex;
+    flex-direction: column; /* Устанавливает вертикальное направление для flex-элементов */
+    justify-content: flex-end;
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 25px;
+  }
+  
+  .label {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 15px;
+    width: 44px;
+  }
+  

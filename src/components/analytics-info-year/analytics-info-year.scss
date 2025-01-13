@@ -1,0 +1,26 @@
+.analytics_info_year {
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    color: var(--blackContent);
+}
+
+.legend-item_year {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-circle_year {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.service-count_year { background-color: var(--beigeOpacity80); }
+.service-percentage_year { background-color: var(--redOpacity80); }
+.service-time_year { background-color: var(--brownOpacity80); }

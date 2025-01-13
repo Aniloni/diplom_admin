@@ -1,0 +1,79 @@
+.calendar {
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--brownOpacity60);
+  
+    .headerCalendar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid var(--brownOpacity60);
+  padding: 15px 25px;
+  .selectCalendar{
+    border: none;
+    color: var(--blackContent);
+  }
+      select {
+        padding: 5px 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+        cursor: pointer;
+      }
+  
+      .calendarBtnContainer {
+        display: flex;
+        align-items: center;
+  
+        .calendarBtn:not(:last-child) {
+          margin-right: 32px;
+        }
+      }
+    }
+  
+    .calendarContent {
+      width: 100%;
+      padding: 0 25px;
+
+  
+      .weekDays {
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+  
+      .day {
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s, color 0.3s;
+  
+        &.prev-month,
+        &.next-month {
+          color: #ddd;
+        }
+  
+        &:hover {
+          background-color: var(--beigeOpacity20);
+        }
+  
+        &.current-day {
+          background-color: var(--beigeOpacity20);
+          font-weight: bold;
+        }
+      }
+  
+      td {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }

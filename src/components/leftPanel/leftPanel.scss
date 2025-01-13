@@ -1,0 +1,98 @@
+.lp-container {
+  display: flex;
+  height: 100%;
+}
+
+.leftPanel {
+  background-color: rgb(243, 233, 225);
+  width: 250px;
+  //height: 832px;
+  border-radius: 28px 0px 0px 28px;
+}
+
+.MuiBox-root.css-19kzrtu {
+  padding: 0;
+}
+
+.leftPanel-logo {
+  margin-top: 35px;
+  margin-left: 50px;
+  width: 150px;
+  height: 63px;
+}
+
+.container {
+  border-bottom: none;
+  border-radius: 28px;
+  padding: 0;
+  margin: 90px auto;
+}
+
+.user-info {
+  font-family: "PT Sans";
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.tabs-group {
+  margin-top: 98px;
+}
+
+.logout-button {
+  display: block;
+  width: 100%;
+  height: 91px;
+  color: var(--blackContent);
+  font-weight: bold;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 24px;
+  font-weight: 700;
+  // margin-top: 190px;
+  border: none;
+  border-radius: 0 0 0 28px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--beigeOpacity10);
+}
+
+.line {
+  width: 216px;
+  height: 0px;
+  border-top: 1px solid var(--brownColor);
+  margin-top: 25px;
+  margin-left: 17px;
+}
+
+.bottom {
+  margin-top: 190px;
+}
+
+.tab-panel-scroll {
+  width: 1030px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.tab-panel-scroll::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.tab-panel-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.tab-panel-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+  

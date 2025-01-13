@@ -1,0 +1,118 @@
+$FIVE: rgba(198, 228, 191, 1);
+$FOUR: rgba(152, 190, 13, 0.3);
+$THREE: rgba(255, 249, 184, 1);
+$TWO: rgba(243, 148, 0, 0.3);
+$ONE: rgba(248, 194, 192, 1);
+
+.AverageCardsWrapper{
+  padding-left: 29px;
+  padding-right: 29px;
+  padding-top: 25px;
+}
+.AverageHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+  .AverageHeaderBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 7px;
+  }
+  h1{
+    font-size: 32px;
+  }
+}
+
+.AverageCardsContent{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  .AverageCardsBody {
+    display: grid;
+    grid-template-columns: repeat(2, 216.25px);
+    row-gap: 76px;
+    column-gap: 100px;
+    .card {
+      height: 142px;
+      padding: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--beigeOpacity10);
+      border-radius: 5px;
+      border-bottom: 1px solid var(--brownColor);
+    }
+    h3 {
+      text-align: center;
+      font-size: 16px;
+      
+    }
+    .cardInfo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p{
+        font-size: 40px;
+      }
+      .cardInfoTime{
+        font-size: 24px;
+      }
+    }
+    .cardRating {
+      width: 216.25px;
+      height: 142px;
+      .cardRateBody {
+        display: flex;
+        align-items: end;
+        gap: 15px;
+        .cardRateScale {
+          width: 150px;
+          height: 13px;
+          border: 1px solid var(--blackContent);
+          border-radius: 50px;
+          .progress {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+          }
+
+          .progress-five {
+            color: $FIVE !important;
+            background-color: $FIVE !important;
+          }
+          .progress-four {
+            color: $FOUR !important;
+            background-color: $FOUR !important;
+          }
+          .progress-three {
+            color: $THREE !important;
+            background-color: $THREE !important;
+          }
+          .progress-two {
+            color: $TWO !important;
+            background-color: $TWO !important;
+          }
+          .progress-one {
+            color: $ONE !important;
+            background-color: $ONE !important;
+          }
+        }
+      }
+      .cardRateBody:not(:last-child) {
+        margin-bottom: 9px;
+      }
+    }
+  }
+}
+
+.currentDateHeader{
+  text-align: center;
+
+}
