@@ -20,7 +20,7 @@ import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import Analytics from "../../API/Analytics";
+// import Analytics from "../../API/Analytics";
 
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
@@ -42,34 +42,34 @@ const AverageCards = function (props) {
     const [selectedTown, setSelectedTown] = useState('(текущий месяц по УР)'); // Состояние для выбранного населенного пункта
     const [towns, setTown] = useState([]);
 
-    const fetchData = async (town) => {
+    // const fetchData = async (town) => {
 
-        if (town === null) {
-            town = selectedTown;
-        }
-        setTown(await Analytics.City())
+    //     if (town === null) {
+    //         town = selectedTown;
+    //     }
+    //     setTown(await Analytics.City())
 
-        let averageData = await Analytics.GetAverage({
-            date_from: lastMonth,
-            date_to: today,
-            selectedTown: town,
-        })
+    //     let averageData = await Analytics.GetAverage({
+    //         date_from: lastMonth,
+    //         date_to: today,
+    //         selectedTown: town,
+    //     })
 
-        setAverage(averageData);
+    //     setAverage(averageData);
 
-        let rating = {};
+    //     let rating = {};
 
-        rating.one   = averageData.rating["1"] / (averageData.count / 100);
-        rating.two   = averageData.rating["2"] / (averageData.count / 100);
-        rating.three = averageData.rating["3"] / (averageData.count / 100);
-        rating.four  = averageData.rating["4"] / (averageData.count / 100);
-        rating.five  = averageData.rating["5"] / (averageData.count / 100);
+    //     rating.one   = averageData.rating["1"] / (averageData.count / 100);
+    //     rating.two   = averageData.rating["2"] / (averageData.count / 100);
+    //     rating.three = averageData.rating["3"] / (averageData.count / 100);
+    //     rating.four  = averageData.rating["4"] / (averageData.count / 100);
+    //     rating.five  = averageData.rating["5"] / (averageData.count / 100);
 
-        setRating(rating)
-    }
+    //     setRating(rating)
+    // }
 
     useEffect(() => {
-        fetchData(null)
+        // fetchData(null)
     }, [])
     const [open, setOpen] = useState(false);  // Состояние для открытия модального окна
 
@@ -137,15 +137,15 @@ const AverageCards = function (props) {
         },
     });
 
-    const handleTownSelect = (town) => {
-        fetchData(town);
-        setSelectedTown(town);  // Обновление выбранного города
-        setOpen(false);         // Закрытие модального окна
+    // const handleTownSelect = (town) => {
+    //     fetchData(town);
+    //     setSelectedTown(town);  // Обновление выбранного города
+    //     setOpen(false);         // Закрытие модального окна
 
-        if (props.onCityChange) {
-            props.onCityChange(town)
-        }
-    };
+    //     if (props.onCityChange) {
+    //         props.onCityChange(town)
+    //     }
+    // };
 
     return (
         <>
@@ -247,7 +247,7 @@ const AverageCards = function (props) {
                             <Grid container spacing={2}>
                                 {towns.map((town) => (
                                     <Grid item xs={3} key={town}>
-                                        <Button onClick={() => handleTownSelect(town)}>{town}</Button>
+                                        <Button>{ /*onClick={() => handleTownSelect(town)}>{town}*/}</Button>
                                     </Grid>
                                 ))}
                             </Grid>

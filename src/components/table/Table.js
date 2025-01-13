@@ -15,7 +15,7 @@ import Pagination from '@mui/material/Pagination';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import styled from '@emotion/styled';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import ProvisionCategories from "../../API/ProvisionCategories";
+// import ProvisionCategories from "../../API/ProvisionCategories";
 
 
 const StyledTableContainer = styled(TableContainer)({
@@ -97,27 +97,27 @@ const BasicTable = function (props) {
     const [rows, setRows] = useState([]);
     const [page, setPage] = useState(1);
 
-    useEffect(() => {
-        const fetchData = async () => {
+    // useEffect(() => {
+    //     const fetchData = async () => {
 
-            let today = new Date();
-            let lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+    //         let today = new Date();
+    //         let lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
 
-            const response = await ProvisionCategories.list({
-                date_from: lastMonth,
-                date_to: today,
-                page: page,
-                city: props.city
-            })
-            setRows(response)
-        }
-        fetchData();
-    }, [page, props.city])
+    //         const response = await ProvisionCategories.list({
+    //             date_from: lastMonth,
+    //             date_to: today,
+    //             page: page,
+    //             city: props.city
+    //         })
+    //         setRows(response)
+    //     }
+    //     fetchData();
+    // }, [page, props.city])
 
 
-    const getProvisionCategories = async (uid) => {
-        setSelectedRow(await ProvisionCategories.get({uid: uid}))
-    }
+    // const getProvisionCategories = async (uid) => {
+    //     setSelectedRow(await ProvisionCategories.get({uid: uid}))
+    // }
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -132,7 +132,7 @@ const BasicTable = function (props) {
     const [selectedRow, setSelectedRow] = useState(null);
 
     const handleRowClick = (row) => {
-        getProvisionCategories(row.uid)
+        // getProvisionCategories(row.uid)
         setOpen(true); // Открываем модальное окно
     };
 

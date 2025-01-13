@@ -6,7 +6,7 @@ import "./LoginEmployee.scss";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import UserService from "../../API/UserService";
+// import UserService from "../../API/UserService";
 
 const LoginEmployee = function () {
   const [login, setLogin] = useState("");
@@ -27,40 +27,40 @@ const LoginEmployee = function () {
     e.preventDefault();
     // запускает useEffect при клике
     setSubmitted(true);
-    // navigate("/LeftPanel"); // переход на след этап
+    navigate("/LeftPanel"); // переход на след этап
   };
 
-  useEffect(() => {
-    if (submitted) {
-      // если submitted true, то вызывается функция sendLogin
-      const sendLogin = async () => {
-        try {
-          const response = await UserService.login({
-            snils: login,
-            password: password,
-          })
+  // useEffect(() => {
+  //   if (submitted) {
+  //     // если submitted true, то вызывается функция sendLogin
+  //     const sendLogin = async () => {
+  //       try {
+  //         const response = await UserService.login({
+  //           snils: login,
+  //           password: password,
+  //         })
 
-          // const result = await axios.post(config.apiUrl + "/api/v1/user/login", {
-          //   snils: login,
-          //   password: password,
-          // });
+  //         // const result = await axios.post(config.apiUrl + "/api/v1/user/login", {
+  //         //   snils: login,
+  //         //   password: password,
+  //         // });
 
-          setResponse(response.data);
-          if (response.success) {
-            navigate("/LeftPanel"); // Переход на другой экран при успешном входе
-          } else {
-            alert("Неверный логин или пароль");
-          }
-        } catch (error) {
-          console.error("Ошибка ввода:", error);
-        } finally {
-          setSubmitted(false); // Сбрасываем, чтобы отправить повторно
-        }
-      };
+  //         setResponse(response.data);
+  //         if (response.success) {
+  //           navigate("/LeftPanel"); // Переход на другой экран при успешном входе
+  //         } else {
+  //           alert("Неверный логин или пароль");
+  //         }
+  //       } catch (error) {
+  //         console.error("Ошибка ввода:", error);
+  //       } finally {
+  //         setSubmitted(false); // Сбрасываем, чтобы отправить повторно
+  //       }
+  //     };
 
-      sendLogin();
-    }
-  }, [submitted, login, password]);
+  //     sendLogin();
+  //   }
+  // }, [submitted, login, password]);
 
   return (
     <div className="section">

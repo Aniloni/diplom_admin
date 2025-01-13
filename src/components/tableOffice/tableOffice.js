@@ -18,7 +18,7 @@ import styled from "@emotion/styled";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import OptionModal from '../option/option-modal/option-modal';
 import "./tableOffice.scss";
-import OfficeService from "../../API/OfficeService";
+// import OfficeService from "../../API/OfficeService";
 
 // Стили для модального окна
 const customTheme = createTheme({
@@ -119,30 +119,30 @@ const TableOffice = (props) => {
   const [office, setOffice] = useState({}); // Состояние для выбора офиса
   const [employees, setEmployees] = useState([]); // Сотрудники офиса
 
-  const sendResponse = async () => {
-    console.log(office)
-    const response = await OfficeService.list_user(props.office_obj.id)
-    setEmployees(response.data);
-  }
+  // const sendResponse = async () => {
+  //   console.log(office)
+  //   const response = await OfficeService.list_user(props.office_obj.id)
+  //   setEmployees(response.data);
+  // }
 
 
-  useEffect(() => {
-    if (!props.plug) {
-      setOffice(props.office_obj)
-      sendResponse()
-    }
-  }, [props.plug, props.office_obj])
+  // useEffect(() => {
+  //   if (!props.plug) {
+  //     setOffice(props.office_obj)
+  //     sendResponse()
+  //   }
+  // }, [props.plug, props.office_obj])
 
-  const handleOpenDialog = (type, employee) => {
-    setOpenDialog({ type, employee });
+  // const handleOpenDialog = (type, employee) => {
+  //   setOpenDialog({ type, employee });
 
-    setEditableData({
-      snils: employee.snils,
-      lastName: employee.last_name,
-      firstName: employee.first_name,
-      middleName: employee.sur_name
-    });
-  };
+    // setEditableData({
+    //   snils: employee.snils,
+    //   lastName: employee.last_name,
+    //   firstName: employee.first_name,
+    //   middleName: employee.sur_name
+    // });
+  // };
 
   const handleCloseDialog = () => {
     setOpenDialog({ type: null, employee: null });
@@ -150,12 +150,12 @@ const TableOffice = (props) => {
   };
 
   // Функция для обработки изменения в полях ввода
-  const handleInputChange = (field, value) => {
-    setEditableData((prevData) => ({
-      ...prevData,
-      [field]: value,
-    }));
-  };
+  // const handleInputChange = (field, value) => {
+  //   setEditableData((prevData) => ({
+  //     ...prevData,
+  //     [field]: value,
+  //   }));
+  // };
 
   return (
     <div>

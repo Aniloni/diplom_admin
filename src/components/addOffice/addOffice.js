@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 import InputModal from "../../components/inputs/input-model/input-modal";
 import Button from "../../components/buttons/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import OfficeService from "../../API/OfficeService";
+// import OfficeService from "../../API/OfficeService";
 
 // Стили для модального окна
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -85,14 +85,14 @@ const AddOffice = () => {
         setOpen(false); // Закрыть модальное окно
     };
 
-    const handleOfficeClickAdd = () => {
-        OfficeService.add_office({
-            title: officeName,
-            city: city,
-            address: officeAddress,
-        })
-        setOpen(false); // Закрыть модальное окно
-    }
+    // const handleOfficeClickAdd = () => {
+    //     OfficeService.add_office({
+    //         title: officeName,
+    //         city: city,
+    //         address: officeAddress,
+    //     })
+    //     setOpen(false); // Закрыть модальное окно
+    // }
 
     return(
         <>
@@ -142,7 +142,7 @@ const AddOffice = () => {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button className="btn_office one modal" onClick={handleOfficeClickAdd}>
+                    <Button className="btn_office one modal" onClick={{/*handleOfficeClickAdd*/}}>
                         добавить офис
                     </Button>
                 </DialogActions>

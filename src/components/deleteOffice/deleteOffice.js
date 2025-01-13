@@ -11,7 +11,7 @@ import InputModal from "../../components/inputs/input-model/input-modal";
 import Button from "../../components/buttons/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import OptionModal from "../option/option-modal/option-modal";
-import OfficeService from "../../API/OfficeService";
+// import OfficeService from "../../API/OfficeService";
 
 // Стили для модального окна
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -77,19 +77,19 @@ const AddOffice = () =>{
     const [office, setOffice] = useState('');
     const [officeList, setOfficeList] = useState([]);
 
-    const sendResponse = async () => {
-        const response = await OfficeService.List()
+    // const sendResponse = async () => {
+    //     const response = await OfficeService.List()
 
-        response.data.forEach(element => {
-            element.label = element.title;
-            element.value = element.id;
-        });
-        setOfficeList(response.data)
-    }
+    //     response.data.forEach(element => {
+    //         element.label = element.title;
+    //         element.value = element.id;
+    //     });
+    //     setOfficeList(response.data)
+    // }
 
-    useEffect(() => {
-        sendResponse();
-    }, []);
+    // useEffect(() => {
+    //     sendResponse();
+    // }, []);
 
 
     const handleClickOpen = () => {
@@ -101,7 +101,7 @@ const AddOffice = () =>{
     };
 
     const handleClickDelete = () => {
-        OfficeService.delete_office(office)
+        // OfficeService.delete_office(office)
         setOpen(false); // Закрыть модальное окно
     }
 

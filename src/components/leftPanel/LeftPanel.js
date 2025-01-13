@@ -11,7 +11,7 @@ import Report from "../../pages/Report/Report.js";
 import Analytics from "../../pages/analytics/Analytics.js";
 import Office from "../../pages/office/Office.js";
 import {useState, useEffect} from "react";
-import UserService from "../../API/UserService";
+// import UserService from "../../API/UserService";
 
 
 function TabPanel(props) {
@@ -76,31 +76,31 @@ const LeftPanel = () => {
     const [user, setUser] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    useEffect(() => {
-        const sendResponse = async () => {
-            try {
-                const response = await UserService.getUser()
-                setUser(response.data);
-                setLoading(false);
-            } catch (error) {
-                console.error("Ошибка ввода:", error);
-            }
-        };
+    // useEffect(() => {
+    //     const sendResponse = async () => {
+    //         try {
+    //             const response = await UserService.getUser()
+    //             setUser(response.data);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             console.error("Ошибка ввода:", error);
+    //         }
+    //     };
 
-        sendResponse();
-    }, []);
+    //     sendResponse();
+    // }, []);
 
-    if (loading) {
-        return <div>Загрузка...</div>;
-    }
+    // if (loading) {
+    //     return <div>Загрузка...</div>;
+    // }
 
-    if (error) {
-        return <div>Ошибка: {error}</div>;
-    }
+    // if (error) {
+    //     return <div>Ошибка: {error}</div>;
+    // }
 
-    if (!user) {
-        return <div>Пользователь не найден</div>;
-    }
+    // if (!user) {
+    //     return <div>Пользователь не найден</div>;
+    // }
 
 
     return (

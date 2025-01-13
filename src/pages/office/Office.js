@@ -17,8 +17,8 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import DeleteOffice from '../../components/deleteOffice/deleteOffice'
 import AverageCards from'../../components/AverageCards/AverageCards'
 import "./Office.scss";
-import OfficeService from "../../API/OfficeService";
-import UserService from "../../API/UserService";
+// import OfficeService from "../../API/OfficeService";
+// import UserService from "../../API/UserService";
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
     '& .MuiDialogContent-root': {
@@ -35,24 +35,24 @@ const Office = () => {
 
     const [offices, setOffices] = useState([]);
 
-    const sendResponse = async () => {
-        const response = await OfficeService.List()
-        const office_current = await OfficeService.getCurrentOffice()
+    // const sendResponse = async () => {
+    //     const response = await OfficeService.List()
+    //     const office_current = await OfficeService.getCurrentOffice()
 
-        setOffices(response.data);
-        setSelectedOffice(office_current.data)
-        setPlug(false)
-    }
+    //     setOffices(response.data);
+    //     setSelectedOffice(office_current.data)
+    //     setPlug(false)
+    // }
 
-    const updateSelectedOffice = async (office) => {
-        const office_current = await OfficeService.getOffice(office.id)
-        setSelectedOffice(office_current.data);
-        setPlug(false)
-    }
+    // const updateSelectedOffice = async (office) => {
+    //     const office_current = await OfficeService.getOffice(office.id)
+    //     setSelectedOffice(office_current.data);
+    //     setPlug(false)
+    // }
 
-    useEffect(() => {
-        sendResponse();
-    }, [])
+    // useEffect(() => {
+    //     sendResponse();
+    // }, [])
 
     const [open, setOpen] = useState(false);  // Состояние для открытия модального окна
 
@@ -65,7 +65,7 @@ const Office = () => {
     };
 
     const handleOfficeSelect = (office) => {
-        updateSelectedOffice(office)
+        // updateSelectedOffice(office)
         setOpen(false);
     };
 

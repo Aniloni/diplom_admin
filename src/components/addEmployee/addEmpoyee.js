@@ -11,7 +11,7 @@ import Button from "../../components/buttons/Button";
 import OptionModal from '../option/option-modal/option-modal';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './addEmpoyee.scss'
-import OfficeService from "../../API/OfficeService";
+// import OfficeService from "../../API/OfficeService";
 
 // Стили для модального окна
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -84,19 +84,19 @@ const AddEmployee = () =>{
 
     const [officeList, setOfficeList] = useState([]);
 
-    const sendResponse = async () => {
-        const response = await OfficeService.List()
+    // const sendResponse = async () => {
+    //     const response = await OfficeService.List()
 
-        response.data.forEach(element => {
-            element.label = element.title;
-            element.value = element.id;
-        });
-        setOfficeList(response.data)
-    }
+    //     response.data.forEach(element => {
+    //         element.label = element.title;
+    //         element.value = element.id;
+    //     });
+    //     setOfficeList(response.data)
+    // }
 
-    useEffect(() => {
-        sendResponse();
-    }, []);
+    // useEffect(() => {
+    //     sendResponse();
+    // }, []);
 
     const handleClickOpen = () => {
         setOpen(true);  // Открыть модальное окно
