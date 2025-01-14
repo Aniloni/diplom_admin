@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import Report from "../../pages/Report/Report.js";
 import Analytics from "../../pages/analytics/Analytics.js";
 import Office from "../../pages/office/Office.js";
+import Employee from "../../pages/employee/Employee.js";
 import {useState, useEffect} from "react";
 // import UserService from "../../API/UserService";
 
@@ -160,6 +161,7 @@ const LeftPanel = () => {
                                 <Analytics></Analytics>
                             </TabPanel>
                             <TabPanel value={value} index={3}>
+                                <Employee></Employee>
                             </TabPanel>
                         </Box>
                     </div>
