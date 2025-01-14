@@ -179,7 +179,7 @@ const TableOffice = (props) => {
                   align="center"
                   width="210px"
                   style={{ cursor: "pointer" }}
-                  onClick={() => handleOpenDialog("edit", employee)}
+                  //onClick={() => handleOpenDialog("edit", employee)}
                 >
                   Изменить
                 </StyledTableCell>
@@ -187,7 +187,7 @@ const TableOffice = (props) => {
                   align="center"
                   width="149px"
                   style={{ cursor: "pointer" }}
-                  onClick={() => handleOpenDialog("fire", employee)}
+                  //onClick={() => handleOpenDialog("fire", employee)}
                 >
                   Уволить
                 </StyledTableCell>
@@ -195,7 +195,7 @@ const TableOffice = (props) => {
                   align="center"
                   width="165px"
                   style={{ cursor: "pointer" }}
-                  onClick={() => handleOpenDialog("transfer", employee)}
+                  //onClick={() => handleOpenDialog("transfer", employee)}
                 >
                   Перевод
                 </StyledTableCell>
@@ -294,25 +294,25 @@ const TableOffice = (props) => {
                 label="СНИЛС"
                 required
                 value={editableData.snils}
-                onChange={(e) => handleInputChange("snils", e.target.value)}
+                //onChange={(e) => handleInputChange("snils", e.target.value)}
               />
               <InputModal
                 label="Фамилия"
                 required
                 value={editableData.lastName}
-                onChange={(e) => handleInputChange("lastName", e.target.value)}
+                //onChange={(e) => handleInputChange("lastName", e.target.value)}
               />
               <InputModal
                 label="Имя"
                 required
                 value={editableData.firstName}
-                onChange={(e) => handleInputChange("firstName", e.target.value)}
+                //onChange={(e) => handleInputChange("firstName", e.target.value)}
               />
               <InputModal
                 label="Отчество"
                 required
                 value={editableData.middleName}
-                onChange={(e) => handleInputChange("middleName", e.target.value)}
+                //onChange={(e) => handleInputChange("middleName", e.target.value)}
               />
           </DialogContent>
           <DialogActions>
