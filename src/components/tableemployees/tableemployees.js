@@ -31,7 +31,8 @@ const StyledNameCell = styled(TableCell)({
     fontWeight: '400',
     color: 'var(--blackContent)',
     textAlign: 'left',
-    borderBottom: '2px solid var(--yourColor)', // Измените цвет на нужный вам
+    // borderBottom: '1px solid var(--brownOpacity60)', // Измените цвет на нужный вам
+    padding:'8px 32px'
   });
 
 const StyledTableCell = styled(TableCell)({
@@ -41,7 +42,6 @@ const StyledTableCell = styled(TableCell)({
     fontFamily: "PT Sans",
     fontSize: "16px",
     fontWeight: "400",
-    height: "66px",
     maxWidth: '100px', 
 });
 
@@ -85,11 +85,11 @@ const TableEmployees = () => {
       <React.Fragment>
         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
           {/* ФИО слева */}
-          <StyledNameCell component="th" scope="row">
+          <StyledNameCell component="th" scope="row"  sx={ { borderBottom: open ? '1px solid var(--brownOpacity60)' : 'none'  } }>
             {row.name}
           </StyledNameCell>
           {/* Иконка раскрытия справа */}
-          <TableCell align="right">
+          <TableCell align="right"     sx={ { borderBottom: open ? '1px solid var(--brownOpacity60)' : 'none'  } }>    
             <IconButton
               aria-label="expand row"
               size="small"
@@ -120,7 +120,9 @@ const TableEmployees = () => {
                   </StyledTableHead>
                   <TableBody>
                     {row.history.map((historyRow) => (
-                      <TableRow key={historyRow.date}>
+                      <TableRow key={historyRow.date}  sx={{
+                        '&:last-child td, &:last-child th': { borderBottom: 'unset' }, // Убираем границу последней строки
+                      }}>
                         <StyledTableCell>{historyRow.date}</StyledTableCell>
                         <StyledTableCell>{historyRow.service}</StyledTableCell>
                         <StyledTableCell align="right">{historyRow.received}</StyledTableCell>
@@ -164,9 +166,11 @@ const TableEmployees = () => {
   return (
     <>
       {rows.map((row) => (
-        <StyledTableContainer component={Paper} key={row.name}>
+        <StyledTableContainer sx={{margin:'10px 30px'}} component={Paper} key={row.name}>
           <Table aria-label="collapsible table">
-          <TableBody sx={{ borderBottom: '2px solid white' }}>
+          <TableBody sx={{
+                '& .MuiTableRow-root': { borderBottom: '2px solid white' }, // Убираем нижнюю границу
+              }}>
               <Row row={row} />
             </TableBody>
           </Table>
