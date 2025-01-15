@@ -62,7 +62,7 @@ const Report = () => {
 
                 <div className="header-report">
                     <p className="report-p">Отчет</p>
-                    <Search></Search>
+                    <Search width={760.66}></Search>
                 </div>
                 <div className="date-picker">
                     <DatePicker label={'Начало периода'} onDateChange={handleDateFromChange}></DatePicker>

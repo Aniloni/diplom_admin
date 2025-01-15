@@ -19,6 +19,7 @@ import AverageCards from'../../components/AverageCards/AverageCards'
 import Search from "../../components/search/Search";
 import TableEmployees from "../../components/tableemployees/tableemployees"
 import "./Employee.scss";
+import { withTheme } from "@emotion/react";
 // import OfficeService from "../../API/OfficeService";
 // import UserService from "../../API/UserService";
 
@@ -128,54 +129,58 @@ const Employee = () => {
     });
 
     return (
-        <div >
+        <div>
             <AverageCards/>
-            <div className="office">
-                    <h1>Информация о сотрудниках</h1>
-                    <button className="AverageHeaderBtn" onClick={handleClickOpen}>
-                        <p>{selectedOffice.title}</p> {/* Изменяемый текст на кнопке */}
-                        <img src={arrow} alt="arrow"/>
-                    </button>
-            </div>
+            <div className="header-employee">
+                <div className="employee">
+                        <h1>Сотрудники</h1>
+                        <button className="AverageHeaderBtn" onClick={handleClickOpen}>
+                            <p>{selectedOffice.title}</p> {/* Изменяемый текст на кнопке */}
+                            <img src={arrow} alt="arrow"/>
+                        </button>
+                </div>
 
-             {/* Модальное окно для выбора офиса*/}
-             <ThemeProvider theme={customTheme}>
-                    <BootstrapDialog
-                        onClose={handleClose}
-                        aria-labelledby="customized-dialog-title"
-                        open={open}
-                    >
-                        <DialogTitle sx={{m: 0, p: 0}}>
-                            Офис МФЦ
-                            <IconButton
-                                aria-label="close"
-                                onClick={handleClose}
-                                sx={(theme) => ({
-                                    position: 'absolute',
-                                    right: 50,
-                                    top: 30,
-                                    color: 'var(--blackContent)',
-                                })}
-                            >
-                                <CloseIcon/>
-                            </IconButton>
-                        </DialogTitle>
-                        <DialogContent dividers>
-                            <Grid container spacing={2}>
-                                {offices.map((office) => (
-                                    <Grid item xs={3} key={office.name}>
-                                        <Button onClick={() => handleOfficeSelect(office)}>{office.title}</Button>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </DialogContent>
-                        <DialogActions/>
-                    </BootstrapDialog>
-                </ThemeProvider>
+                {/* Модальное окно для выбора офиса*/}
+                <ThemeProvider theme={customTheme}>
+                        <BootstrapDialog
+                            onClose={handleClose}
+                            aria-labelledby="customized-dialog-title"
+                            open={open}
+                        >
+                            <DialogTitle sx={{m: 0, p: 0}}>
+                                Офис МФЦ
+                                <IconButton
+                                    aria-label="close"
+                                    onClick={handleClose}
+                                    sx={(theme) => ({
+                                        position: 'absolute',
+                                        right: 50,
+                                        top: 30,
+                                        color: 'var(--blackContent)',
+                                    })}
+                                >
+                                    <CloseIcon/>
+                                </IconButton>
+                            </DialogTitle>
+                            <DialogContent dividers>
+                                <Grid container spacing={2}>
+                                    {offices.map((office) => (
+                                        <Grid item xs={3} key={office.name}>
+                                            <Button onClick={() => handleOfficeSelect(office)}>{office.title}</Button>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            </DialogContent>
+                            <DialogActions/>
+                        </BootstrapDialog>
+                    </ThemeProvider>
 
-                <Search></Search>
+                    <Search width={300}></Search>
+                </div>
 
-                <TableEmployees></TableEmployees>
+                <div className="table-employee">
+                    <TableEmployees></TableEmployees>
+                </div>
         </div>
     );
 };

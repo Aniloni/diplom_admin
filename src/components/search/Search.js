@@ -33,7 +33,7 @@ const StyledTextField = styled(TextField)({
     },
   });
 
-  const Search =() =>{
+  const Search  = ({ width = 760.66 }) =>{
     return(
       <Paper
           component="form"
@@ -41,7 +41,7 @@ const StyledTextField = styled(TextField)({
               borderRadius: '20px',
               display: 'flex',
               alignItems: 'center', 
-              width: 760.66,
+              width: width,
               height: 44,
               boxShadow: 'none',
               backgroundColor: 'var(--beigeOpacity10)',

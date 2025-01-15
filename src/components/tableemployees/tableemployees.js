@@ -50,6 +50,7 @@ const StyledTableContainer = styled(TableContainer)({
     border: '2px solid var(--brownOpacity60)', 
     borderRadius: '28px', 
     overflow: 'hidden',
+    width: '950px',
 });
 
 const TableEmployees = () => {
@@ -125,9 +126,9 @@ const TableEmployees = () => {
                       }}>
                         <StyledTableCell>{historyRow.date}</StyledTableCell>
                         <StyledTableCell>{historyRow.service}</StyledTableCell>
-                        <StyledTableCell align="right">{historyRow.received}</StyledTableCell>
-                        <StyledTableCell align="right">{historyRow.time}</StyledTableCell>
-                        <StyledTableCell align="right">{historyRow.result}</StyledTableCell>
+                        <StyledTableCell>{historyRow.received}</StyledTableCell>
+                        <StyledTableCell>{historyRow.time}</StyledTableCell>
+                        <StyledTableCell>{historyRow.result}</StyledTableCell>
                         <StyledTableCell align="left">{historyRow.mark}</StyledTableCell>
                       </TableRow>
                     ))}
