@@ -13,12 +13,13 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import styled from '@emotion/styled';
+import TableSortLabel from '@mui/material/TableSortLabel';
 
 const StyledTableHead = styled(TableHead)({
     backgroundColor: 'var(--white)',
     '& th': {
         color: 'var(--blackContent)',
-        borderBottom: '1px solid var(--brownOpacity60)',
+        borderBottom: '2px solid var(--brownOpacity60)',
         fontFamily: "PT Sans",
         fontSize: "16px",
         fontWeight: "400",
@@ -36,7 +37,7 @@ const StyledNameCell = styled(TableCell)({
   });
 
 const StyledTableCell = styled(TableCell)({
-    borderBottom: '1px solid var(--brownOpacity60)',
+    borderBottom: '2px solid var(--brownOpacity60)',
     color: 'var(--blackContent)',
     padding: '16px',
     fontFamily: "PT Sans",
@@ -59,7 +60,7 @@ const TableEmployees = () => {
       name,
       history: [
         {
-          date: '2020-01-05',
+          date: '2020.01.05',
           service: 'Выдача паспорта',
           received: 'Зона СПС',
           time: '00:15:50',
@@ -67,7 +68,7 @@ const TableEmployees = () => {
           mark: 5,
         },
         {
-          date: '2020-02-05',
+          date: '2020.02.05',
           service: 'Выдача паспорта',
           received: 'Зона СПС',
           time: '00:29:50',
@@ -78,7 +79,39 @@ const TableEmployees = () => {
     };
   }
 
+  // Сортировка по дате
+function descendingComparator(a, b) {
+  const dateA = a.date ? new Date(a.date.split('.').reverse().join('-')) : new Date(0);
+  const dateB = b.date ? new Date(b.date.split('.').reverse().join('-')) : new Date(0);
+  if (dateB < dateA) {
+      return -1;
+  }
+  if (dateB > dateA) {
+      return 1;
+  }
+  return 0;
+}
+  
+function getComparator(order) {
+  return order === 'desc'
+    ? (a, b) => descendingComparator(a, b)
+    : (a, b) => -descendingComparator(a, b);
+}
+
   function Row(props) {
+    const [order, setOrder] = React.useState('asc');
+    const [orderBy, setOrderBy] = React.useState('date');
+
+    const handleRequestSort = (event, property) => {
+        const isAsc = orderBy === property && order === 'asc';
+        setOrder(isAsc ? 'desc' : 'asc');
+        setOrderBy(property);
+    };
+
+    const sortedHistory = React.useMemo(() => {
+        return [...props.row.history].sort(getComparator(order));
+    }, [props.row.history, order]);
+    
     const { row } = props;
     const [open, setOpen] = React.useState(false);
   
@@ -86,11 +119,11 @@ const TableEmployees = () => {
       <React.Fragment>
         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
           {/* ФИО слева */}
-          <StyledNameCell component="th" scope="row"  sx={ { borderBottom: open ? '1px solid var(--brownOpacity60)' : 'none'  } }>
+          <StyledNameCell component="th" scope="row"  sx={ { borderBottom: open ? '2px solid var(--brownOpacity60)' : 'none'  } }>
             {row.name}
           </StyledNameCell>
           {/* Иконка раскрытия справа */}
-          <TableCell align="right"     sx={ { borderBottom: open ? '1px solid var(--brownOpacity60)' : 'none'  } }>    
+          <TableCell align="right"     sx={ { borderBottom: open ? '2px solid var(--brownOpacity60)' : 'none'  } }>    
             <IconButton
               aria-label="expand row"
               size="small"
@@ -111,7 +144,15 @@ const TableEmployees = () => {
                 >
                   <StyledTableHead>
                     <TableRow>
-                      <TableCell>Дата</TableCell>
+                      <TableCell>
+                      <TableSortLabel
+                        active={orderBy === 'date'}
+                        direction={orderBy === 'date' ? order : 'asc'}
+                        onClick={(event) => handleRequestSort(event, 'date')}
+                      >
+                          Дата
+                      </TableSortLabel>
+                      </TableCell>
                       <TableCell>Название услуги</TableCell>
                       <TableCell>Получена с</TableCell>
                       <TableCell>Длительность</TableCell>
@@ -120,7 +161,7 @@ const TableEmployees = () => {
                     </TableRow>
                   </StyledTableHead>
                   <TableBody>
-                    {row.history.map((historyRow) => (
+                    {sortedHistory.map((historyRow) => (
                       <TableRow key={historyRow.date}  sx={{
                         '&:last-child td, &:last-child th': { borderBottom: 'unset' }, // Убираем границу последней строки
                       }}>
