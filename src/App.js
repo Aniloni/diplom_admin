@@ -11,8 +11,8 @@ function App() {
 <LeftPanel/> */}
             <Router>
                 <Routes>
-                    {/* <Route path="/" element={<LoginEmployee/>}/> */}
-                    <Route path="/" element={<LeftPanel/>}/>
+                    <Route path="/LeftPanel" element={<LeftPanel/>}/>
+                    <Route path="/" element={<LoginEmployee/>}/>
                 </Routes>
             </Router>
         </>

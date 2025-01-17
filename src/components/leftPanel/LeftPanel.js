@@ -110,12 +110,15 @@ const LeftPanel = () => {
                 {/* ограничивающий контейнер 1280px */}
                 <div className="lp-container">
                     <div className="leftPanel tab-panel-scroll">
+                        <div>
+
                         <img className="leftPanel-logo" src={logo} alt="logo"/>
                         <div className="line"></div>
                         <div className="user-info">
-                            <p>{user.first_name}</p>
-                            <p>{user.last_name}</p>
-                            <p>{user.sur_name}</p>
+                            <p>щарпи</p>
+                            <p>ыыыв</p>
+                            <p>орал</p>
+                        </div>
                         </div>
 
                         <div className="tabs-group">
@@ -136,8 +139,10 @@ const LeftPanel = () => {
                                 <DTabs index={3} label="Отчет по сотрудникам" {...a11yProps(3)} />
                             </Tabs>
                         </div>
+                        <div>
                         <div className="line bottom"></div>
                         <button className="logout-button">Выйти</button>
+                        </div>
                     </div>
                     <div>
                         <Box

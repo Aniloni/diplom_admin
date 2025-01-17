@@ -23,10 +23,10 @@ const LoginEmployee = function () {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // запускает useEffect при клике
-    setSubmitted(true);
+  const handleSubmit = () => {
+    // e.preventDefault();
+    // // запускает useEffect при клике
+    // setSubmitted(true);
     navigate("/LeftPanel"); // переход на след этап
   };
 
@@ -73,7 +73,7 @@ const LoginEmployee = function () {
 
           <div className="text-loginEmployee">ВХОД В УЧЕТНУЮ ЗАПИСЬ</div>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form >
           <div className="input-loginEmployee">
             <Input
               value={login}
@@ -87,7 +87,7 @@ const LoginEmployee = function () {
               label={"ПАРОЛЬ"}
             ></Input>{" "}
           </div>
-          <Button type="submit">ВОЙТИ</Button>
+          <Button  onClick={handleSubmit} type="submit">ВОЙТИ</Button>
         </form>
       </div>
     </div>
